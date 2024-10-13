@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Phone Cost Calculator</title>
+</head>
+<body>
+
+    <header>
+        <h1 class="title">Phone Cost Calculator</h1>
+    </header>
+
+    <main>
+        <section class="calculator-section">
+            <form id="phone-calculator-form">
+                <div class="form-group">
+                    <label for="company_name">Company Name: </label>
+                    <input type="text" name="Company Name" id="company_name" placeholder="My Company" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="company_contact">Company Contact Number: </label>
+                    <input type="tel" name="Company Contact Number" id="company_contact" placeholder="07149 182716" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="smartphones_amount">Quantity of Smartphones: </label>
+                    <input type="number" name="Smartphone Quantity" id="smartphones_amount" placeholder="Enter quantity (5-100)" min="5" max="100" required>
+                    <span id="error-message" style="color: red; display: none;">Please enter a multiple of 5 between 5 and 100.</span>
+                </div>
+
+                <div class="form-group">
+                    <label for="smartphone_type">Smartphone Type: </label>
+                    <select name="Smartphone Type" id="smartphone_type" required>
+                        <option value="Basic">Basic</option>
+                        <option value="Standard">Standard</option>
+                        <option value="Superior">Superior</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="setup_option">Setup Option: </label>
+                    <select name="Setup Option" id="setup_option" required>
+                        <option value="option_a">Option A</option>
+                        <option value="option_b">Option B</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="calculate-btn">Calculate</button>
+                </div>
+            </form>
+        </section>
+
+        <section class="quotation-section">
+            <h2>Quotation Details</h2>
+            <div class="quotation-details">
+                <p><strong>Company Name:</strong> <span id="customer_name_output">N/A</span></p>
+                <p><strong>Company Contact Number:</strong> <span id="customer_contact_output">N/A</span></p>
+                <p><strong>Quantity of Smartphones:</strong> <span id="smartphones_amount_output">N/A</span></p>
+                <p><strong>Cost of Smartphones:</strong> <span id="smartphone_price_output">N/A</span></p>
+                <p><strong>Cost of Setup Option:</strong> <span id="setup_cost_output">N/A</span></p>
+                <p><strong>Total (Before VAT):</strong> <span id="pre_vat_cost_output">N/A</span></p>
+                <p><strong>VAT (20%):</strong> <span id="vat_cost_output">N/A</span></p>
+                <p><strong>Total Cost (After VAT):</strong> <span id="total_cost_output">N/A</span></p>
+            </div>
+        </section>
+    </main>
+
+    <script src="price-calculation.js"></script>
+</body>
+</html>
