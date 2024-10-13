@@ -68,6 +68,33 @@
             </div>
         </section>
     </main>
+    <script>
+        const smartphoneQuantityInput = document.getElementById('smartphones_amount');
+        const errorMessage = document.getElementById('error-message');
+        const form = document.getElementById('phone-calculator-form');
+
+        smartphoneQuantityInput.addEventListener('input', function() {
+            const value = parseInt(smartphoneQuantityInput.value);
+            
+            // Check if value is a multiple of 5 and between 5 and 100
+            if (value % 5 !== 0 || value < 5 || value > 100) {
+                errorMessage.style.display = 'block';
+            } else {
+                errorMessage.style.display = 'none';
+            }
+        });
+
+        // Form validation before submitting
+        form.addEventListener('submit', function(event) {
+            const value = parseInt(smartphoneQuantityInput.value);
+
+            // Prevent form submission if the input is invalid
+            if (value % 5 !== 0 || value < 5 || value > 100) {
+                event.preventDefault();
+                alert('Please enter a valid quantity (multiple of 5, between 5 and 100).');
+            }
+        });
+    </script>
 
     <script src="price-calculation.js"></script>
 </body>

@@ -15,7 +15,7 @@ const setupPrices = {
 const vatRate = 0.2;
 
 // Get elements
-const form = document.getElementById("phone-calculator-form");
+// const form = document.getElementById("phone-calculator-form");
 const smartphonesAmountOutput = document.getElementById(
   "smartphones_amount_output"
 );
